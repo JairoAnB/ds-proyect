@@ -1,0 +1,40 @@
+{
+  "538157501150003211": {
+    "username": "hhnkitt",
+    "description": "hola mundo",
+    "balance": 6579,
+    "color": "#f5b042",
+    "nickname": "sadasd",
+    "pronombres": "elvalazo",
+    "joined": "28/4/2024",
+    "userCreated": "24 de enero de 2019",
+    "userCountry": "chile",
+    "userBirthday": "No asigando",
+    "inventory": []
+  },
+  "535271917763166229": {
+    "username": "estoyentucloset",
+    "description": "This is the final boss of the game, able to use 6 different attacks, one for each of the 6 types in the game. The Fire attack consists of 24 balls released in an arc shape formation, constantly damaging characters. The Ice attack summons 10 sparks which fall down while producing mine residues, both of which slow the characters it strikes by 20%. The Thunder attack shoots 6 lasers towards random characters (including dead ones). The Poison attack shoots 20 spears up the sky which creates a cloud residue when hit, both of which will poison characters. The Freeze attack shoots a bullet at extreme velocity that reflect off terrain, freezing characters and creates a large snowflake which may freeze another character who happen to be close to the flake. The Physical attack creates a skull-shaped attack on a random character (including dead ones), instantly killing all characters staying within the projectile after 1.8s.",
+    "color": "#BABABA",
+    "nickname": "JAIROTIC JAIRER نفسي في",
+    "pronombres": "salsa y picante",
+    "joined": "2/10/2023",
+    "userCreated": "16 de enero de 2019",
+    "userCountry": "kepler",
+    "userBirthday": "No asigando",
+    "inventory": [],
+    "balance": 758
+  },
+  "984240146176168017": {
+    "username": "chaewongatitatoxica",
+    "description": "No hay descripción",
+    "color": "#ff0000",
+    "nickname": null,
+    "pronombres": "No hay pronombres",
+    "joined": "28/4/2024",
+    "userCreated": "8 de junio de 2022",
+    "userCountry": "No asignado",
+    "inventory": [],
+    "balance": 208
+  }
+}
