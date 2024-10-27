@@ -1,0 +1,47 @@
+{
+    "items": [
+      {
+        "id": "anillo",
+        "name": "Anillo de oro",
+        "price": 100,
+        "category": "accesorios"
+      },
+      {
+        "id": "haerin",
+        "name": "Peluche de Haerin",
+        "price": 1000,
+        "category": "peluches"
+      },
+      {
+        "id": "hanni",
+        "name": "Peluche de Hanni",
+        "price": 1000,
+        "category": "peluches"
+      },
+      {
+        "id": "hyein",
+        "name": "Peluche de Hyein",
+        "price": 1000,
+        "category": "peluches"
+      },
+      {
+        "id": "danielle",
+        "name": "Peluche de Danielle",
+        "price": 1000,
+        "category": "peluches"
+      },
+      {
+        "id": "minji",
+        "name": "Peluche de Minji",
+        "price": 1000,
+        "category": "peluches"
+      },
+      {
+        "id": "banner",
+        "name": "Cambio de banner",
+        "price": 10000,
+        "category": "utilidades"
+      }
+    ]
+  }
+  

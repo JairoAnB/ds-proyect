@@ -32,10 +32,11 @@ module.exports = {
           }),
           userCreated: interaction.user.createdAt.toLocaleDateString("es-ES", {
             year: "numeric",
-            month: "long",
+            month: "numeric",
             day: "numeric",
           }),
           userCountry: "No asignado",
+          banner: "https://cdn.discordapp.com/attachments/803069581001621548/1300003767726641202/Banner.png?ex=671f425b&is=671df0db&hm=81ee9faf4b7e74f0c9220a49de54465766845112865926a039643325e74e7a3d&",
           inventory:[]
         };
 
@@ -53,6 +54,10 @@ module.exports = {
               )
               .setThumbnail(`${interaction.user.avatarURL()}`)
               .setColor("#ff0000")
+              .setFooter({
+                text: `${interaction.guild.name}`,
+                iconURL: interaction.guild.iconURL(),
+              })
               .setTimestamp(),
           ],
         });
@@ -68,6 +73,10 @@ module.exports = {
                 `Error al crear el perfil de ${interaction.user.username}, ya existe un perfil creado.`
               )
               .setColor("#ff0000")
+              .setFooter({
+                text: `${interaction.guild.name}`,
+                iconURL: interaction.guild.iconURL(),
+              })
               .setTimestamp(),
           ],
         });

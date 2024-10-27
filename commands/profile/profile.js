@@ -30,7 +30,7 @@ module.exports = {
               .setThumbnail(avatar)
               .addFields(
                 {
-                  name: "👤 **Nombre de usuario**",
+                  name: "👤 **Usuario**",
                   value: username || "No hay nombre de usuario",
                   inline: true,
                 },
@@ -42,7 +42,7 @@ module.exports = {
                   inline: true,
                 },
                 {
-                  name: "🎨 **Color favorito**",
+                  name: "🎨 **Color**",
                   value: profiles[interaction.user.id].color || "No hay color",
                   inline: true,
                 },
@@ -52,12 +52,12 @@ module.exports = {
                   inline: true,
                 },
                 {
-                  name: "📅 **Cuenta creada el **",
+                  name: "📅 **Cuenta creada**",
                   value: profiles[interaction.user.id].userCreated,
                   inline: true,
                 },
                 {
-                  name: " 🌍** País **",
+                  name: " 🌍**País**",
                   value: profiles[interaction.user.id].userCountry,
                   inline: true,
                 },
@@ -74,6 +74,10 @@ module.exports = {
                   profiles[interaction.user.id].joined
                 }`
               )
+              .setFooter({
+                text: `${interaction.guild.name}`,
+                iconURL: interaction.guild.iconURL(),
+              }).setImage(profiles[interaction.user.id].banner)
               .setFooter({
                 text: `${interaction.guild.name}`,
                 iconURL: interaction.guild.iconURL(),

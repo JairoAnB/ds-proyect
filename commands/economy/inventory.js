@@ -22,7 +22,10 @@ module.exports = {
         .setColor("#ff0000")
         .setThumbnail(
           "https://cdn.discordapp.com/attachments/803069581001621548/1299747625410498654/reshot-icon-backpack-UYQGM37N2B.png?ex=671e53ce&is=671d024e&hm=50caf915de8f5c0de62e5b180fb809a3741efdebe71458b0a9c72e455f746b29&"
-        )
+        ).setFooter({
+          text: `${interaction.guild.name}`,
+          iconURL: interaction.guild.iconURL(),
+        })
         .setTimestamp();
 
       if (inventory.length === 0) {
@@ -34,11 +37,7 @@ module.exports = {
         for (let i = 0; i < inventory.length; i += chunkSize) {
           const chunk = inventory.slice(i, i + chunkSize).join("\n");
           embed.addFields({
-            name: `Objetos disponibles ${i + 1}-${
-              i + chunkSize > inventory.length
-                ? inventory.length
-                : i + chunkSize
-            }`,
+            name: `Objetos disponibles`,
             value: chunk,
           });
         }

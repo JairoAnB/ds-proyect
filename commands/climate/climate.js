@@ -45,6 +45,10 @@ module.exports = {
               `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
             )
             .setColor("#ff0000")
+            .setFooter({
+              text: `${interaction.guild.name}`,
+              iconURL: interaction.guild.iconURL(),
+            })
             .setTimestamp(),
         ],
       });

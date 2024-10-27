@@ -38,6 +38,9 @@ module.exports = {
         });
         return;
       }
+      if(profiles[interaction.user.id].balance < 0){
+
+      }
       const now = Date.now();
       if (coldowns.has(interaction.user.id)) {
         const ultimoUso = coldowns.get(interaction.user.id);
@@ -74,7 +77,7 @@ module.exports = {
         "has trabajado como secuestrador de bebes para la DINA",
         "has trabajado como vendedor de organos en el mercado nergro",
         "has trabajado como traductor sin brazos de criollo haitiano en braille, descifrando escritos con tu pene",
-        "has trabajado como analista de semen boliviano en la autopsia del cangri, para que te encanta el frio.. ",
+        "has trabajado como analista de semen boliviano en la autopsia del cangri ",
         "has trabajado como chofer de Muhammed Yusuf, pero te despidio por ser un pobre maricon",
         "has trabajado como pescador tradicional birmano para triplicar el pib nominal y per capita de tu pais",
       ];
@@ -98,11 +101,15 @@ module.exports = {
               iconURL: `${interaction.user.avatarURL()}`,
             })
             .setDescription(
-              `**${trabajoAleatorio}**... por tu trabajo has recibido la mediocre suma de **$${pago}** pesos chilenos.
+              `**${trabajoAleatorio}**... por tu arduo trabajo has recibido la mediocre suma de **$${pago}** pesos chilenos.
               
                  > Ojala no te hayan pagado con billetes falsos...`
             )
             .setColor(color)
+            .setFooter({
+              text: `${interaction.guild.name}`,
+              iconURL: interaction.guild.iconURL(),
+            })
             .setThumbnail(
               "https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png"
             )

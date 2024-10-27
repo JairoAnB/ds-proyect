@@ -2,7 +2,7 @@
   "538157501150003211": {
     "username": "hhnkitt",
     "description": "hola mundo",
-    "balance": 6579,
+    "balance": 5840,
     "color": "#f5b042",
     "nickname": "sadasd",
     "pronombres": "elvalazo",
@@ -10,7 +10,11 @@
     "userCreated": "24 de enero de 2019",
     "userCountry": "chile",
     "userBirthday": "No asigando",
-    "inventory": []
+    "banner": "https://cdn.discordapp.com/attachments/803069581001621548/1300004975736262696/Banner_sin_redondear.png?ex=671f437b&is=671df1fb&hm=c4601c30bc1ad14075500385c95b89632aafcf1866d8c61323b6ee4ba8c5dfb8&",
+    "inventory": [
+      "Peluche de Danielle",
+      "Peluche de Hanni"
+    ]
   },
   "535271917763166229": {
     "username": "estoyentucloset",
@@ -22,6 +26,7 @@
     "userCreated": "16 de enero de 2019",
     "userCountry": "kepler",
     "userBirthday": "No asigando",
+    "banner": "https://cdn.discordapp.com/attachments/803069581001621548/1300004975736262696/Banner_sin_redondear.png?ex=671f437b&is=671df1fb&hm=c4601c30bc1ad14075500385c95b89632aafcf1866d8c61323b6ee4ba8c5dfb8&",
     "inventory": [],
     "balance": 758
   },
@@ -34,6 +39,7 @@
     "joined": "28/4/2024",
     "userCreated": "8 de junio de 2022",
     "userCountry": "No asignado",
+    "banner": "https://cdn.discordapp.com/attachments/803069581001621548/1300004975736262696/Banner_sin_redondear.png?ex=671f437b&is=671df1fb&hm=c4601c30bc1ad14075500385c95b89632aafcf1866d8c61323b6ee4ba8c5dfb8&",
     "inventory": [],
     "balance": 208
   }
