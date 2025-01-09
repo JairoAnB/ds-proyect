@@ -2,7 +2,7 @@
   "538157501150003211": {
     "username": "hhnkitt",
     "description": "hola mundo",
-    "balance": 5840,
+    "balance": 15282,
     "color": "#f5b042",
     "nickname": "sadasd",
     "pronombres": "elvalazo",
@@ -12,8 +12,10 @@
     "userBirthday": "No asigando",
     "banner": "https://cdn.discordapp.com/attachments/803069581001621548/1300004975736262696/Banner_sin_redondear.png?ex=671f437b&is=671df1fb&hm=c4601c30bc1ad14075500385c95b89632aafcf1866d8c61323b6ee4ba8c5dfb8&",
     "inventory": [
-      "Peluche de Danielle",
-      "Peluche de Hanni"
+      {
+        "id": "anillo",
+        "name": "Anillo de oro"
+      }
     ]
   },
   "535271917763166229": {
@@ -28,7 +30,7 @@
     "userBirthday": "No asigando",
     "banner": "https://cdn.discordapp.com/attachments/803069581001621548/1300004975736262696/Banner_sin_redondear.png?ex=671f437b&is=671df1fb&hm=c4601c30bc1ad14075500385c95b89632aafcf1866d8c61323b6ee4ba8c5dfb8&",
     "inventory": [],
-    "balance": 758
+    "balance": 2379
   },
   "984240146176168017": {
     "username": "chaewongatitatoxica",

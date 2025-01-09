@@ -45,15 +45,11 @@ module.exports = {
             })
             .setDescription(
               `Abres tu vieja billetera, revisas que tu dinero actual es de $**${
-                profiles[interaction.user.id].balance
+                profiles[interaction.user.id].balance || 0
               }** pesos chilenos.
                 > ¡Sigue trabajando duro para conseguir mas dinero!`
             )
             .setColor(color)
-            .setFooter({
-              text: `${interaction.guild.name}`,
-              iconURL: interaction.guild.iconURL(),
-            })
             .setThumbnail(
               "https://cdn.discordapp.com/attachments/803069581001621548/1299567796409208954/reshot-icon-money-and-card-SR3FGHLMWA.png?ex=671dac53&is=671c5ad3&hm=1179cd2687afdd81bc72c8ba45d16c14536d06e6712db5536136f80db89cc843&"
             )

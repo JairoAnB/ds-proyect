@@ -58,7 +58,7 @@ module.exports = {
                       });
                 }else{
                     profiles[interaction.user.id].balance -= itemToBuy.price;
-                    inventory.push(itemToBuy.name);
+                    inventory.push({id: itemToBuy.id, name: itemToBuy.name});
                     fs.writeFileSync(pathUsers, JSON.stringify(profiles, null, 2));
                     interaction.reply({
                         embeds: [
@@ -76,10 +76,6 @@ module.exports = {
                               `
                             )
                             .setColor("#ff0000")
-                            .setFooter({
-                                text: `${interaction.guild.name}`,
-                                iconURL: interaction.guild.iconURL(),
-                              })
                             .setTimestamp(),
                         ],
                       });
@@ -89,15 +85,5 @@ module.exports = {
             console.log(error)
             
         }
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -87,10 +87,6 @@ module.exports = {
               )
               .setThumbnail(interaction.user.avatarURL())
               .setColor("#f58ee4")
-              .setFooter({
-                text: `${interaction.guild.name}`,
-                iconURL: interaction.guild.iconURL(),
-              })
               .setTimestamp(),
           ],
         });

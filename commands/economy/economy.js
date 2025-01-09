@@ -4,7 +4,7 @@ const { execute } = require("./economyCurrency");
 const path = "./user.json";
 
 const coldowns = new Map();
-const coldownTime = 60000;
+const coldownTime = 5 * 60 * 1000;
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -25,11 +25,11 @@ module.exports = {
           embeds: [
             new EmbedBuilder()
               .setAuthor({
-                name: `Muhammed Yusuf`,
+                name: `Error :x:`,
                 iconURL: `${interaction.user.avatarURL()}`,
               })
               .setDescription(
-                `Error :x: La peticion no ha podido procesarse, Necesitas crearte un perfil antes de ocupar esta funcion.
+                `La peticion no ha podido procesarse, Necesitas crearte un perfil antes de ocupar esta funcion.
                       \`/create-profile\` para continuar.`
               )
               .setColor("#ff0000")
@@ -46,16 +46,17 @@ module.exports = {
         const ultimoUso = coldowns.get(interaction.user.id);
         const tiempoRestante = coldownTime - (now - ultimoUso);
         if (tiempoRestante > 0) {
-          minutosRestantes = Math.ceil(tiempoRestante / 1000);
+          const minutosRestantes = Math.floor(tiempoRestante / 60000);
+          const segundosRestantes = Math.floor((tiempoRestante % 60000) / 1000);
           await interaction.reply({
             embeds: [
               new EmbedBuilder()
                 .setAuthor({
-                  name: `Muhammed Yusuf`,
+                  name: `Error :x:`,
                   iconURL: `${interaction.user.avatarURL()}`,
                 })
                 .setDescription(
-                  `Debes esperar **${tiempoRestante}** para volver a utilizar este comando. :x:`
+                  `Debes esperar **${minutosRestantes} minutos** y **${segundosRestantes} segundos** para volver a trabajar.`
                 )
                 .setColor("#ff0000")
                 .setTimestamp(),
@@ -106,10 +107,6 @@ module.exports = {
                  > Ojala no te hayan pagado con billetes falsos...`
             )
             .setColor(color)
-            .setFooter({
-              text: `${interaction.guild.name}`,
-              iconURL: interaction.guild.iconURL(),
-            })
             .setThumbnail(
               "https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png"
             )

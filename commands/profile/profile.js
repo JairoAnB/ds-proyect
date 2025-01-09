@@ -73,15 +73,7 @@ module.exports = {
                 `-# **Se unió al servidor el:** ${
                   profiles[interaction.user.id].joined
                 }`
-              )
-              .setFooter({
-                text: `${interaction.guild.name}`,
-                iconURL: interaction.guild.iconURL(),
-              }).setImage(profiles[interaction.user.id].banner)
-              .setFooter({
-                text: `${interaction.guild.name}`,
-                iconURL: interaction.guild.iconURL(),
-              })
+              ).setImage(profiles[interaction.user.id].banner)
               .setTimestamp(),
           ],
         });

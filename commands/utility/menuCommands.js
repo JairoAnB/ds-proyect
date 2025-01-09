@@ -44,10 +44,6 @@ module.exports = {
           `
       )
       .setColor("#2bff00")
-      .setFooter({
-        text: `${interaction.guild.name}`,
-        iconURL: interaction.guild.iconURL(),
-      })
       .setTimestamp();
 
     await interaction.reply({

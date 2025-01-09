@@ -35,7 +35,7 @@ const rest = new REST({ version: "10" }).setToken(token);
       `Empezando a cargar ${commands.length} aplicación (/) commands.`
     );
     const data = await rest.put(
-      Routes.applicationCommands(client_id),
+      Routes.applicationGuildCommands(client_id, guild_id),
       {
         body: commands,
       }

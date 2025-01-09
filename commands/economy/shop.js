@@ -57,10 +57,6 @@ module.exports = {
               }
             )
             .setColor(color)
-            .setFooter({
-              text: `${interaction.guild.name}`,
-              iconURL: interaction.guild.iconURL(),
-            })
             .setThumbnail("https://cdn.discordapp.com/attachments/803069581001621548/1299978649289752657/tienda.png?ex=671f2af6&is=671dd976&hm=a5e92f9ee065df3a08eb1f1f1445c38cfb0934d202d2b65f651689e35b7bfcf7&")
             .setTimestamp(),
         ],

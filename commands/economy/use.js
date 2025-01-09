@@ -32,8 +32,13 @@ module.exports = {
         }
 
         const inventory = profiles[interaction.user.id]?.inventory;
+        const itemsName = inventory.map(item => item.id);
+        let Bname = ''
+        const apikey = 'AIzaSyCy4d0n5MqwpJSMVe4OBvK5_fLKpNqrM6E';
 
-        if (!inventory || !inventory.includes(objeto)) {
+
+
+        if (!itemsName || !itemsName.includes(objeto)) {
             return interaction.reply({
                 embeds: [
                     new EmbedBuilder()
@@ -64,10 +69,9 @@ module.exports = {
                 const buffer = Buffer.from(response.data, 'binary');
                 const { width, height } = await sharp(buffer).metadata();
 
-
                 if (width >= banner_width && height >= banner_height) {
                     profiles[interaction.user.id].banner = url; 
-                    const index = inventory.indexOf(objeto);
+                    const index = itemsName.indexOf(objeto);
                     inventory.splice(index, 1);
                     fs.writeFileSync(pathUsers, JSON.stringify(profiles, null, 2));
 
@@ -101,10 +105,6 @@ module.exports = {
                                     \n> El ancho de la imagen debe ser de un minumo de 600px y el largo de 200px.`)
                                 .setColor("#ff0000")
                                 .setTimestamp()
-                                .setFooter({
-                                    text: `${interaction.guild.name}`,
-                                    iconURL: interaction.guild.iconURL(),
-                                })
                         ],
                     });
                 }
@@ -120,13 +120,80 @@ module.exports = {
                             .setDescription(`:x: Ocurrió un error al procesar la imagen. Asegúrate de que la URL sea válida y que la imagen cumpla los requisitos minimos.`)
                             .setColor("#ff0000")
                             .setTimestamp()
-                            .setFooter({
-                                text: `${interaction.guild.name}`,
-                                iconURL: interaction.guild.iconURL(),
-                            })
                     ],
+                });
+                return;
+            }
+        }
+        if(objeto === "anillo"){
+            await interaction.reply({
+                embeds: [
+                    new EmbedBuilder()
+                        .setAuthor({
+                            name: `Error`,
+                            iconURL: `${interaction.user.avatarURL()}`,
+                        })
+                        .setDescription(`Este objeto se utiliza solo para empeñar.
+                            \n> Por favor ocupa el comando de /trade para poder ocupar este objeto.`)
+                        .setColor("#ff0000")
+                        .setTimestamp()
+                        .setFooter({
+                            text: `${interaction.guild.name}`,
+                            iconURL: interaction.guild.iconURL(),
+                        })
+                ],
+            });
+            return;
+        }
+        if (objeto) {
+            const premio = Math.floor(Math.random() * 2500) + 1;
+            Bname = `${objeto}-happy`;
+            const urlTenor = `https://tenor.googleapis.com/v2/search?q=${Bname}&key=${apikey}&client_key=my_test_app&limit=8`;
+        
+            try {
+                const response = await axios.get(urlTenor);
+                const results = response.data.results;
+        
+                if (results && results.length > 0 && results[0].media_formats && results[0].media_formats.gif) {
+                    const randomIndex = Math.floor(Math.random() * results.length);
+                    const gifURL = results[randomIndex].media_formats.gif.url;
+
+                    await interaction.reply({
+                        embeds: [
+                            new EmbedBuilder()
+                                .setAuthor({
+                                    name: `Canjeo de ticket`,
+                                    iconURL: `${interaction.user.avatarURL()}`,
+                                })
+                                .setDescription(`¡Haz utilizado correctamente el **Ticket de ${objeto}!**
+                                    \n Has reclamado un premio de $${premio} pesos chilenos.
+                                    > El objeto ha sido eliminado de tu inventario :(`)
+                                .setColor(profiles[interaction.user.id].color)
+                                .setTimestamp()
+                                .setImage(gifURL)
+                                .setFooter({
+                                    text: `${interaction.guild.name}`,
+                                    iconURL: interaction.guild.iconURL(),
+                                })
+                        ],
+                    });
+                    const index = itemsName.indexOf(objeto);
+                    inventory.splice(index, 1);
+                    profiles[interaction.user.id].balance += premio;
+                    fs.writeFileSync(pathUsers, JSON.stringify(profiles, null, 2));
+                } else {
+                    console.error('No se encontraron resultados válidos para el GIF');
+                    await interaction.reply({
+                        content: 'No se pudo encontrar un GIF, intenta de nuevo más tarde.',
+                    });
+                }
+            } catch (error) {
+                console.error('Error al obtener los datos de Tenor:', error);
+                await interaction.reply({
+                    content: 'Hubo un error al intentar obtener el GIF.',
                 });
             }
         }
-    }
+        return;
+}
 };

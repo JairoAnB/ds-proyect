@@ -1,10 +1,8 @@
 const {
   SlashCommandBuilder,
-  TextChannel,
   EmbedBuilder,
 } = require("discord.js");
 const axios = require("axios");
-const { execute } = require("../music/pause");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("clima")
@@ -45,10 +43,6 @@ module.exports = {
               `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
             )
             .setColor("#ff0000")
-            .setFooter({
-              text: `${interaction.guild.name}`,
-              iconURL: interaction.guild.iconURL(),
-            })
             .setTimestamp(),
         ],
       });

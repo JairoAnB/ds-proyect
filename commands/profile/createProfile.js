@@ -28,8 +28,8 @@ module.exports = {
             year: "numeric",
             month: "numeric",
             day: "numeric",
-          balance: 0,
           }),
+          balance: 0,
           userCreated: interaction.user.createdAt.toLocaleDateString("es-ES", {
             year: "numeric",
             month: "numeric",
@@ -54,10 +54,6 @@ module.exports = {
               )
               .setThumbnail(`${interaction.user.avatarURL()}`)
               .setColor("#ff0000")
-              .setFooter({
-                text: `${interaction.guild.name}`,
-                iconURL: interaction.guild.iconURL(),
-              })
               .setTimestamp(),
           ],
         });
@@ -73,10 +69,6 @@ module.exports = {
                 `Error al crear el perfil de ${interaction.user.username}, ya existe un perfil creado.`
               )
               .setColor("#ff0000")
-              .setFooter({
-                text: `${interaction.guild.name}`,
-                iconURL: interaction.guild.iconURL(),
-              })
               .setTimestamp(),
           ],
         });
